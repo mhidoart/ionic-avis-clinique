@@ -1,0 +1,7 @@
+{
+  "name": "razi-avis",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

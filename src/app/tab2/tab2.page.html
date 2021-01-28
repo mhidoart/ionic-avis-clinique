@@ -1,0 +1,106 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            avi sur les services
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card" [hidden]="!isSent()">
+        <img src="../../assets/header-logo.jpg" alt="" />
+        <ion-card-header>
+            <ion-card-title style="color: green;">Merci de partager votre avis!!
+                <ion-icon name="heart" style="color: green;"></ion-icon>
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="welcome-card" [hidden]="isSent()">
+        <img src="../../assets/header-logo.jpg" alt="" />
+        <ion-card-header>
+            <ion-card-title style="color: green;">partager votre avis</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-subtitle>présence en réanimation</ion-card-subtitle>
+            <mat-checkbox [(ngModel)]="disabled">je sais pas !</mat-checkbox>
+            <div style="text-align: center; ">
+                <h1 style="float: left;">{{gettoggleText()}}</h1>
+                <ion-toggle [(ngModel)]="checked" [disabled]="disabled"></ion-toggle>
+            </div>
+        </ion-card-content>
+
+        <ion-card-content>
+            <ion-card-subtitle>Temps d'attente</ion-card-subtitle>
+            <mat-checkbox [(ngModel)]="disabled1">je sais pas !</mat-checkbox>
+            <div style="text-align: center; ">
+                <h1 style="float: left;">{{gettoggleText1()}}</h1>
+                <ion-toggle [(ngModel)]="checked1" [disabled]="disabled1"></ion-toggle>
+            </div>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>Eco-graphie :</ion-card-subtitle>
+            <mat-checkbox [(ngModel)]="disabled2">je sais pas !</mat-checkbox>
+            <div style="text-align: center; ">
+                <h1 style="float: left;">{{gettoggleText2()}}</h1>
+                <ion-toggle [(ngModel)]="checked2" [disabled]="disabled2"></ion-toggle>
+            </div>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>radiographie:</ion-card-subtitle>
+            <mat-checkbox [(ngModel)]="disabled3">je sais pas !</mat-checkbox>
+            <div style="text-align: center; ">
+                <h1 style="float: left;">{{gettoggleText3()}}</h1>
+                <ion-toggle [(ngModel)]="checked3" [disabled]="disabled3"></ion-toggle>
+            </div>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>IRM :</ion-card-subtitle>
+            <mat-checkbox [(ngModel)]="disabled4">je sais pas !</mat-checkbox>
+            <div style="text-align: center; ">
+                <h1 style="float: left;">{{gettoggleText4()}}</h1>
+                <ion-toggle [(ngModel)]="checked4" [disabled]="disabled4"></ion-toggle>
+            </div>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>Qualité de soin :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="qs" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bonne" style="margin: 3px;">bonne</mat-radio-button>
+                <mat-radio-button class="example-margin" value="acceptable" style="margin: 3px;">acceptable</mat-radio-button>
+                <mat-radio-button class="example-margin" value="mauvaise" style="margin: 3px;">mauvaise</mat-radio-button>
+            </mat-radio-group>
+
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>comportement :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="comportement" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bon" style="margin: 3px;">bon</mat-radio-button>
+                <mat-radio-button class="example-margin" value="acceptable" style="margin: 3px;">acceptable</mat-radio-button>
+                <mat-radio-button class="example-margin" value="mauvais" style="margin: 3px;">mauvais</mat-radio-button>
+            </mat-radio-group>
+
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>présence immédiate de médecin :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="presence" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="Oui" style="margin: 3px;">Oui</mat-radio-button>
+                <mat-radio-button class="example-margin" value="Non" style="margin: 3px;">Non</mat-radio-button>
+
+            </mat-radio-group>
+
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>Qualité de matériaux :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="qm" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bonne" style="margin: 3px;">bonne</mat-radio-button>
+                <mat-radio-button class="example-margin" value="mauvaise" style="margin: 3px;">mauvaise</mat-radio-button>
+
+            </mat-radio-group>
+            <div style="text-align: center; padding: 10px; margin-top: 10px;">
+                <button mat-fab color="warn" (click)="sendServiceReport()" [disabled]="isSent()">envoyer</button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

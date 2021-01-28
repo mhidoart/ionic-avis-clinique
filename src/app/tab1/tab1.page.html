@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Avis - generale
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card" [hidden]="!isSent()">
+        <img src="../../assets/header-logo.jpg" alt="" />
+        <ion-card-header>
+            <ion-card-title style="color: green;">Merci de partager votre avis!!
+                <ion-icon name="heart" style="color: green;"></ion-icon>
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+    </ion-card>
+    <ion-card class="welcome-card" [hidden]="isSent()">
+        <img src="../../assets/header-logo.jpg" alt="" />
+        <ion-card-header>
+            <ion-card-title style="color: green;">partager votre avis</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-subtitle>accueil :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="reception" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bonne" style="margin: 3px;">bonne</mat-radio-button>
+                <mat-radio-button class="example-margin" value="moyenne" style="margin: 3px;">moyenne</mat-radio-button>
+                <mat-radio-button class="example-margin" value="mauvaise" style="margin: 3px;">mauvaise</mat-radio-button>
+            </mat-radio-group>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>propreté :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="proprete" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bonne" style="margin: 3px;">bonne</mat-radio-button>
+                <mat-radio-button class="example-margin" value="acceptable" style="margin: 3px;">acceptable</mat-radio-button>
+                <mat-radio-button class="example-margin" value="sale" style="margin: 3px;">sale</mat-radio-button>
+            </mat-radio-group>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>présentation du personnel :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="PresentationPersonnel" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="bien présenté" style="margin: 3px;">bien présenté</mat-radio-button>
+                <mat-radio-button class="example-margin" value="acceptable" style="margin: 3px;">acceptable</mat-radio-button>
+                <mat-radio-button class="example-margin" value="mal présenté" style="margin: 3px;">mal présenté</mat-radio-button>
+            </mat-radio-group>
+
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>prix de consultation :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="prixConsultation" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="coûteux" style="margin: 3px;">coûteux</mat-radio-button>
+                <mat-radio-button class="example-margin" value="abordable" style="margin: 3px;">abordable</mat-radio-button>
+                <mat-radio-button class="example-margin" value="à bas prix" style="margin: 3px;">à bas prix</mat-radio-button>
+            </mat-radio-group>
+
+        </ion-card-content>
+        <ion-card-content>
+            <ion-card-subtitle>temp d'attente :</ion-card-subtitle>
+            <mat-radio-group [(ngModel)]="tempAttente" style="padding: 2px;">
+                <mat-radio-button class="example-margin" value="court" style="margin: 3px;">court</mat-radio-button>
+                <mat-radio-button class="example-margin" value="moyen" style="margin: 3px;">moyen</mat-radio-button>
+                <mat-radio-button class="example-margin" value="long" style="margin: 3px;">long</mat-radio-button>
+            </mat-radio-group>
+            <div style="text-align: center; padding: 10px; margin-top: 10px;">
+                <button mat-fab color="warn" (click)="sendGlobaleReport()" [disabled]="isSent()">envoyer</button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+        <ion-list-header>
+            <ion-label>Resources</ion-label>
+        </ion-list-header>
+        <ion-item href="https://www.facebook.com/mhido.art">
+            <ion-icon slot="start" color="medium" name="globe"></ion-icon>
+            <ion-label>Siteweb,rendez-vous..etc</ion-label>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

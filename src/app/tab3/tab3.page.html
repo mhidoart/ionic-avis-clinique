@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            contactez-nous
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card" [hidden]="getHiddenState()">
+
+        <div style="text-align: center;">
+            <img src="../../assets/loading.gif" alt="" />
+            <h1>loading ...</h1>
+        </div>
+    </ion-card>
+    <ion-card class="welcome-card" [hidden]="hidden">
+
+        <ion-card-content style="max-height: 500px; overflow-y: scroll;">
+            <div class="example-container">
+                <mat-form-field style="width: 100%; margin: 10px;">
+                    <input [(ngModel)]="nom" matInput placeholder="Nom">
+                </mat-form-field>
+                <mat-form-field style="width: 100%; margin: 10px;">
+                    <input [(ngModel)]="email" matInput placeholder="Email">
+                </mat-form-field>
+                <mat-form-field style="width: 100%; margin: 10px;">
+                    <textarea [(ngModel)]="msg" matInput placeholder="Message" rows="5" cols="40"></textarea>
+                </mat-form-field>
+                <div style="text-align: center;">
+                    <button mat-raised-button color="primary" (click)="send()">Envoyer
+                      <mat-icon>send</mat-icon>
+                        </button>
+                </div>
+            </div>
+
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
